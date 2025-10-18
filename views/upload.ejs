@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuvToUpload - Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/upload.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <h1>Luv<span>ToUpload</span></h1>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn" id="homeBtn">
+                    <a href = "/">
+                    <i class="fas fa-home"></i> Home
+                    </a>
+                </button>
+                <button class="nav-btn" id="profileBtn">
+                    <a href = "/profile">
+                    <i class="fas fa-user"></i> Profile
+                    </a>
+                </button>
+                <button class="nav-btn" id="logoutBtn">
+                    <a href = "/logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </button>
+                      <button class="nav-btn" id="logoutBtn">
+                    <a href = "/documents">All Files</a>
+                </button>
+            </div>
+        </div>
+        
+        <div class="upload-container">
+            <div class="upload-area">
+                <h2><i class="fas fa-cloud-upload-alt"></i> Upload Your File</h2>
+                <p>Select a file from your device or drag and drop it here</p>
+                
+                <div class="upload-box" id="uploadBox">
+                    <i class="fas fa-file-upload upload-icon"></i>
+                    <h3>Drag & Drop Your File</h3>
+                    <p>Supports JPG, PNG, GIF, MP4, MOV up to 100MB</p>
+                    <button class="browse-btn" id="browseBtn">Browse Files</button>
+                    <form action = "/upload" method = "post" enctype="multipart/form-data">
+                    <input name = "file" type="file" id="fileInput" class="file-input">
+                </div> 
+                <div class="file-info" id="fileInfo">
+                    <h4><i class="fas fa-file"></i> Selected File</h4>
+                    <div class="file-details">
+                        <span class="file-name" id="fileName">No file selected</span>
+                        <span class="file-size" id="fileSize">0 MB</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="uploadProgress"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0% uploaded</div>
+                </div>
+                <button class="upload-btn" id="uploadBtn">Upload File</button>
+            </div>
+            <div class="upload-options">
+                <h2><i class="fas fa-cog"></i> Upload Options</h2>
+                
+                <div class="option-group">
+                    <label for="title"><i class="fas fa-heading"></i> Title</label>
+                    <input name = "title" type="text" id="title" placeholder="Enter a title for your file">
+                </div>
+            </form>
+                <div class="option-group">
+                    <label for="description"><i class="fas fa-align-left"></i> Description</label>
+                    <textarea id="description" placeholder="Add a description (optional)"></textarea>
+                </div>
+                
+                <div class="option-group">
+                    <label for="category"><i class="fas fa-folder"></i> Category</label>
+                    <select id="category">
+                        <option value="">Select a category</option>
+                        <option value="art">Art & Design</option>
+                        <option value="photography">Photography</option>
+                        <option value="video">Video</option>
+                        <option value="music">Music</option>
+                        <option value="documents">Documents</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="option-group">
+                    <label><i class="fas fa-lock"></i> Privacy Settings</label>
+                    <div class="privacy-options">
+                        <div class="privacy-option selected" data-privacy="public">
+                            <i class="fas fa-globe-americas"></i>
+                            <p>Public</p>
+                            <span>Anyone can view</span>
+                        </div>
+                        <div class="privacy-option" data-privacy="private">
+                            <i class="fas fa-lock"></i>
+                            <p>Private</p>
+                            <span>Only you can view</span>
+                        </div>
+                        <div class="privacy-option" data-privacy="link">
+                            <i class="fas fa-link"></i>
+                            <p>Link Only</p>
+                            <span>Anyone with the link</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h2>Upload Successful!</h2>
+            <p>Your file has been uploaded successfully and is now processing.</p>
+            <button class="nav-btn" id="newUploadBtn">
+                <i class="fas fa-plus"></i> Upload Another File
+            </button>
+        </div>
+    </div>
+    <script src = "/javascripts/upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuvToUpload - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/profile.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <h1>Luv<span>ToUpload</span></h1>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn" id="homeBtn">
+                    <a href = "/">
+                    <i class="fas fa-home"></i> Home
+                    </a>
+                </button>
+                <button class="nav-btn" id="logoutBtn">
+                    <a href = "/logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </button>
+            </div>
+        </div>
+        
+        <div class="profile-container">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <p class="welcome-text">Welcome back!</p>
+                        <h2 id="username"><%=  username  %></h2>
+                        <p>Premium Member since 2025</p>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">2.4K</div>
+                        <div class="stat-label">Likes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">56</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-envelope"></i> Email Address</h3>
+                    <p><%=  email  %></p>
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-calendar-alt"></i> Member Since</h3>
+                    <p>October 2025</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Bio</h3>
+                    <p>Smart user who love to uplod and store the images , documents or files digitally for easy backup and retrieval</p>
+                </div>
+            </div>
+            
+            <div class="recent-activity">
+                <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                <ul class="activity-list">
+                    <li class="activity-item">
+                        <p class="activity-text">Opend LuvToUpload Homepage</p>
+                        <p class="activity-time">5 minutes ago</p>
+                    </li>
+                    <li class="activity-item">
+                        <p class="activity-text">Registered in LuvToUpload</p>
+                        <p class="activity-time">10 minutes ago</p>
+                    </li>
+                    <li class="activity-item">
+                        <p class="activity-text">Login in LuvToUpload</p>
+                        <p class="activity-time">15 minutes ago</p>
+                    </li>
+                    <li class="activity-item">
+                        <p class="activity-text">Opened Profile Page</p>
+                        <p class="activity-time">20 minutes ago</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src = "/javascripts/profile.js"></script>
+</body>
+</html>

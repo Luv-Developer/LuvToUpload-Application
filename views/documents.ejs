@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuvToUpload | Documents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "/stylesheets/documents.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>LuvToUpload</span>
+            </div>
+            <div class="user-actions">
+                <a href = "/">
+                <button class="btn btn-outline">
+                     Home
+                </button>
+                </a>
+                <button class="btn btn-primary">
+                    <a href = "/profile">
+                    <i class="fas fa-user"></i> My Account
+                    </a>
+                </button>
+            </div>
+        </header>
+
+        <section class="page-title">
+            <h1>All Documents</h1>
+            <p>Access and manage all your uploaded documents in one place</p>
+        </section>
+
+        <section class="documents-grid">
+            <% docs.forEach((doc)=>{   %>
+            <div class="document-card">
+                <i class="fas fa-file-image doc-icon"></i>
+                <h3 class="doc-title"><%=  doc.title  %></h3>
+                <div class="doc-meta">
+                    <span><i class="far fa-calendar"></i><%= doc.date  %></span>
+                    <span><i class="far fa-file"></i> <%= doc.mb  %>MB</span>
+                </div>
+                <div class="doc-actions">
+                    <a href="<%=  doc.url  %>" class="doc-link">
+                        <i class="fas fa-eye"></i> View Document
+                    </a>
+                    <!--
+                    <div class="btn-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    -->
+                </div>
+            </div>
+          <%  })   %>
+        </section>
+
+        <section class="upload-section">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <div class="upload-text">
+                <h3>Upload New Documents</h3>
+                <p>Drag and drop files here or click to browse</p>
+            </div>
+            <form action = "/upload">
+            <button class="upload-btn">
+                <i class="fas fa-plus"></i> Upload Files
+            </button>
+            </form>
+        </section>
+
+        <footer>
+            <p>© 2025 LuvToUpload. All rights reserved. | Secure Document Management</p>
+        </footer>
+    </div>
+    <script src = "/javascripts/documents.js"></script>
+</body>
+</html>
